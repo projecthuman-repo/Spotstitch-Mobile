@@ -10,6 +10,8 @@ import BackButton from '../components/BackButton'
 import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
+import Icon from '../components/Icon'
+import { socialIconList } from '../components/Icon/socialIconList'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
@@ -33,7 +35,7 @@ export default function LoginScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Welcome back.</Header>
+      <Header>Welcome to Spotstitch!</Header>
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -55,18 +57,39 @@ export default function LoginScreen({ navigation }) {
         errorText={password.error}
         secureTextEntry
       />
-      <View style={styles.forgotPassword}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate('ResetPasswordScreen')}
-        >
-          <Text style={styles.forgot}>Forgot your password?</Text>
-        </TouchableOpacity>
-      </View>
-      <Button mode="contained" onPress={onLoginPressed}>
-        Login
+      <Button
+        style={styles.signInButton}
+        mode="contained"
+        onPress={onLoginPressed}
+      >
+        <Text style={styles.signInText}>Sign in</Text>
       </Button>
-      <View style={styles.row}>
-        <Text>Don’t have an account? </Text>
+      <View style={styles.breakLine}>
+        <View style={styles.line} />
+        <Text style={styles.or}>Or sign in with social media</Text>
+        <View style={styles.line} />
+      </View>
+      <View style={[styles.row, styles.icons]}>
+        {socialIconList.map((item) => {
+          return (
+            <Icon
+              key={item.name}
+              name={item.name}
+              containerStyle={styles.iconContainer}
+              onPress={item.onPress}
+            />
+          )
+        })}
+      </View>
+      <View
+        style={[
+          styles.row,
+          {
+            marginTop: 20,
+          },
+        ]}
+      >
+        <Text style={styles.signUpText}>No account? </Text>
         <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
@@ -76,21 +99,47 @@ export default function LoginScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  forgotPassword: {
-    width: '100%',
-    alignItems: 'flex-end',
-    marginBottom: 24,
-  },
   row: {
     flexDirection: 'row',
     marginTop: 4,
   },
-  forgot: {
-    fontSize: 13,
-    color: theme.colors.secondary,
+  icons: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   link: {
     fontWeight: 'bold',
-    color: theme.colors.primary,
+    color: theme.colors.link,
+  },
+  iconContainer: {
+    marginHorizontal: 10,
+    marginTop: 10,
+  },
+  signInButton: {
+    marginTop: 20,
+    width: '40%',
+    backgroundColor: theme.colors.gray,
+  },
+  signInText: {
+    color: theme.colors.text,
+    fontWeight: 'bold',
+  },
+  breakLine: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginVertical: 20,
+  },
+  line: {
+    height: 1,
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  or: {
+    marginHorizontal: 10,
+  },
+  signUpText: {
+    fontWeight: 'bold',
   },
 })
