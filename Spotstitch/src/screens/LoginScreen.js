@@ -12,6 +12,7 @@ import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import Icon from '../components/Icon'
 import { socialIconList } from '../components/Icon/socialIconList'
+import HorizontalLine from '../components/HorizontalLine'
 
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
@@ -64,11 +65,7 @@ export default function LoginScreen({ navigation }) {
       >
         <Text style={styles.signInText}>Sign in</Text>
       </Button>
-      <View style={styles.breakLine}>
-        <View style={styles.line} />
-        <Text style={styles.or}>Or sign in with social media</Text>
-        <View style={styles.line} />
-      </View>
+      <HorizontalLine text="Or sign in with social media" />
       <View style={[styles.row, styles.icons]}>
         {socialIconList.map((item) => {
           return (
@@ -124,20 +121,6 @@ const styles = StyleSheet.create({
   signInText: {
     color: theme.colors.text,
     fontWeight: 'bold',
-  },
-  breakLine: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 20,
-  },
-  line: {
-    height: 1,
-    flex: 1,
-    backgroundColor: '#000',
-  },
-  or: {
-    marginHorizontal: 10,
   },
   signUpText: {
     fontWeight: 'bold',

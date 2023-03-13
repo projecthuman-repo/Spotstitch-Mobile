@@ -11,10 +11,14 @@ import { theme } from '../core/theme'
 import { emailValidator } from '../helpers/emailValidator'
 import { passwordValidator } from '../helpers/passwordValidator'
 import { nameValidator } from '../helpers/nameValidator'
+import { socialIconList } from '../components/Icon/socialIconList'
+import Icon from '../components/Icon'
+import HorizontalLine from '../components/HorizontalLine'
 
 export default function RegisterScreen({ navigation }) {
   const [name, setName] = useState({ value: '', error: '' })
   const [email, setEmail] = useState({ value: '', error: '' })
+  const [username, setUsername] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
   const onSignUpPressed = () => {
@@ -37,9 +41,22 @@ export default function RegisterScreen({ navigation }) {
     <Background>
       <BackButton goBack={navigation.goBack} />
       <Logo />
-      <Header>Create Account</Header>
+      <Header>Sign up with social media</Header>
+      <View style={[styles.row, styles.icons]}>
+        {socialIconList.map((item) => {
+          return (
+            <Icon
+              key={item.name}
+              name={item.name}
+              containerStyle={styles.iconContainer}
+              onPress={item.onPress}
+            />
+          )
+        })}
+      </View>
+      <HorizontalLine text="Or use your email" />
       <TextInput
-        label="Name"
+        label="Full name"
         returnKeyType="next"
         value={name.value}
         onChangeText={(text) => setName({ value: text, error: '' })}
@@ -59,6 +76,15 @@ export default function RegisterScreen({ navigation }) {
         keyboardType="email-address"
       />
       <TextInput
+        label="Username"
+        returnKeyType="next"
+        value={username.value}
+        onChangeText={(text) => setUsername({ value: text, error: '' })}
+        error={!!username.error}
+        errorText={username.error}
+        autoCapitalize="none"
+      />
+      <TextInput
         label="Password"
         returnKeyType="done"
         value={password.value}
@@ -70,14 +96,14 @@ export default function RegisterScreen({ navigation }) {
       <Button
         mode="contained"
         onPress={onSignUpPressed}
-        style={{ marginTop: 24 }}
+        style={styles.signUpButton}
       >
-        Sign Up
+        <Text style={styles.signUpText}>Sign Up</Text>
       </Button>
       <View style={styles.row}>
-        <Text>Already have an account? </Text>
+        <Text style={styles.signInText}>Already have an account? </Text>
         <TouchableOpacity onPress={() => navigation.replace('LoginScreen')}>
-          <Text style={styles.link}>Login</Text>
+          <Text style={styles.link}>Sign In</Text>
         </TouchableOpacity>
       </View>
     </Background>
@@ -89,8 +115,29 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: 4,
   },
+  icons: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconContainer: {
+    marginHorizontal: 10,
+    marginTop: 10,
+  },
   link: {
     fontWeight: 'bold',
-    color: theme.colors.primary,
+    color: theme.colors.link,
+  },
+  signUpButton: {
+    marginVertical: 10,
+    width: '40%',
+    backgroundColor: theme.colors.gray,
+  },
+  signUpText: {
+    color: theme.colors.text,
+    fontWeight: 'bold',
+  },
+  signInText: {
+    fontWeight: 'bold',
   },
 })
