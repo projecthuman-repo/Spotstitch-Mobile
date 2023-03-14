@@ -9,10 +9,8 @@ export default function StartScreen({ navigation }) {
   return (
     <Background>
       <Logo />
-      <Header>Login Template</Header>
-      <Paragraph>
-        Welcome to Spotstitch
-      </Paragraph>
+      <Header>Spotstitch</Header>
+      <Paragraph>Welcome to Spotstitch</Paragraph>
       <Button
         mode="contained"
         onPress={() => navigation.navigate('LoginScreen')}

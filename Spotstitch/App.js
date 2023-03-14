@@ -11,9 +11,10 @@ import {
   ResetPasswordScreen,
   Dashboard,
 } from './src/screens'
-import TrendingScreen from './src/screens/TrendingScreen';
+import TrendingScreen from './src/screens/TrendingScreen'
 import PostScreen from './src/screens/PostScreen'
-
+import LoginOTPVerificationScreen from './src/screens/LoginOTPVerification'
+import AccountCreationScreen from './src/screens/AccountCreation'
 
 const Stack = createStackNavigator()
 
@@ -34,7 +35,18 @@ export default function App() {
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="TrendingScreen" component={TrendingScreen} />
           <Stack.Screen name="PostScreen" component={PostScreen} />
-          <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
+          <Stack.Screen
+            name="ResetPasswordScreen"
+            component={ResetPasswordScreen}
+          />
+          <Stack.Screen
+            name="LoginOTPVerificationScreen"
+            component={LoginOTPVerificationScreen}
+          />
+          <Stack.Screen
+            name="AccountCreationScreen"
+            component={AccountCreationScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
