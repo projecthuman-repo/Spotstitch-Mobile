@@ -10,5 +10,8 @@ export const theme = {
     error: '#f13a59',
     link: '#007BED',
     gray: '#C7C9CB',
+    darkGray: '#666666',
+    verificationGreen: '#46B85F',
+    lightBlue: '#B9CFF4',
   },
 }
