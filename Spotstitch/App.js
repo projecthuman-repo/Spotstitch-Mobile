@@ -14,6 +14,7 @@ import {
 import TrendingScreen from './src/screens/TrendingScreen'
 import PostScreen from './src/screens/PostScreen'
 import LoginOTPVerificationScreen from './src/screens/LoginOTPVerification'
+import AccountCreationScreen from './src/screens/AccountCreation'
 
 const Stack = createStackNavigator()
 
@@ -41,6 +42,10 @@ export default function App() {
           <Stack.Screen
             name="LoginOTPVerificationScreen"
             component={LoginOTPVerificationScreen}
+          />
+          <Stack.Screen
+            name="AccountCreationScreen"
+            component={AccountCreationScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>
