@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const Event = ({ name, time, area, imageUrl }) => {
+const Event = ({ name, time, area, imageUrl, description }) => {
   const navigation = useNavigation();
 
   const handlePress = () => {
-    navigation.navigate('EventScreen', { name, time, area, imageUrl });
+    navigation.navigate('EventScreen', { name, time, area, imageUrl, description });
   };
 
   return (

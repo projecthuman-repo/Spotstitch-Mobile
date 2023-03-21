@@ -30,6 +30,7 @@ const events = [
     time: '2:00 PM',
     area: 'Location 1',
     image: 'https://www.example.com/image1.jpg',
+    description: 'This is the description of Event1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum dolor in orci convallis, eu aliquet dui congue'
   },
   {
     id: 4,
@@ -37,6 +38,8 @@ const events = [
     time: '3:00 PM',
     area: 'Location 2',
     image: 'https://www.example.com/image2.jpg',
+    description: 'This is the description of Event2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce rutrum dolor in orci convallis, eu aliquet dui congue'
+
   },
 ];
 
@@ -52,8 +55,8 @@ const MyPostsScreen = () => (
 
 const EventScreen = () => (
   <View style={styles.container}>
-    {events.map((post) => (
-      <Event key={post.id} name={post.name} time={post.time} area={post.area} imageUrl={post.image} />
+    {events.map((event) => (
+      <Event key={event.id} name={event.name} time={event.time} area={event.area} imageUrl={event.image} description={event.description}/>
     ))}
   </View>
 );
