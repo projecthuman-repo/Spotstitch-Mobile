@@ -38,6 +38,13 @@ export default function LoginOTPVerificationScreen({ navigation, route }) {
       >
         <Text style={styles.buttonText}>Continue</Text>
       </Button>
+      <Button
+        style={styles.skipButton}
+        mode="text"
+        onPress={() => navigation.navigate('Dashboard')}
+      >
+        <Text style={styles.skipButtonText}>Skip</Text>
+      </Button>
       <View style={styles.row}>
         <Text style={styles.codeText}>Need another code? </Text>
         <TouchableOpacity onPress={() => {}}>
