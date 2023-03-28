@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigation.navigate('StartScreen');
-        }, 3000);
+        }, 1000);
 
         return () => clearTimeout(timer);
     }, []);

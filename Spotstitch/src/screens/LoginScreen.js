@@ -15,22 +15,27 @@ import { socialIconList } from '../components/Icon/socialIconList'
 import HorizontalLine from '../components/HorizontalLine'
 
 export default function LoginScreen({ navigation }) {
-  const [email, setEmail] = useState({ value: '', error: '' })
-  const [password, setPassword] = useState({ value: '', error: '' })
+  const [email, setEmail] = useState({ value: '', error: '' });
+  const [password, setPassword] = useState({ value: '', error: '' });
+  const [showPassword, setShowPassword] = useState(false);
 
   const onLoginPressed = () => {
-    const emailError = emailValidator(email.value)
-    const passwordError = passwordValidator(password.value)
+    const emailError = emailValidator(email.value);
+    const passwordError = passwordValidator(password.value);
     if (emailError || passwordError) {
-      setEmail({ ...email, error: emailError })
-      setPassword({ ...password, error: passwordError })
-      return
+      setEmail({ ...email, error: emailError });
+      setPassword({ ...password, error: passwordError });
+      return;
     }
     navigation.reset({
       index: 0,
       routes: [{ name: 'LoginOTPVerificationScreen' }],
-    })
-  }
+    });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <Background>
@@ -49,20 +54,24 @@ export default function LoginScreen({ navigation }) {
         textContentType="emailAddress"
         keyboardType="email-address"
       />
-      <TextInput
-        label="Password"
-        returnKeyType="done"
-        value={password.value}
-        onChangeText={(text) => setPassword({ value: text, error: '' })}
-        error={!!password.error}
-        errorText={password.error}
-        secureTextEntry
-      />
-      <Button
-        style={styles.signInButton}
-        mode="contained"
-        onPress={onLoginPressed}
-      >
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+        <TextInput
+          label="Password"
+          returnKeyType="done"
+          value={password.value}
+          onChangeText={(text) => setPassword({ value: text, error: '' })}
+          error={!!password.error}
+          errorText={password.error}
+          secureTextEntry={!showPassword}
+          style={{ flex: 1 }}
+        />
+        <TouchableOpacity onPress={togglePasswordVisibility}>
+          <Text style={{ fontSize: 16, color: 'blue', marginLeft: 10 }}>
+            {showPassword ? 'Hide' : 'Show'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <Button style={styles.signInButton} mode="contained" onPress={onLoginPressed}>
         <Text style={styles.signInText}>Sign in</Text>
       </Button>
       <HorizontalLine text="Or sign in with social media" />
@@ -75,24 +84,17 @@ export default function LoginScreen({ navigation }) {
               containerStyle={styles.iconContainer}
               onPress={item.onPress}
             />
-          )
+          );
         })}
       </View>
-      <View
-        style={[
-          styles.row,
-          {
-            marginTop: 20,
-          },
-        ]}
-      >
+      <View style={[styles.row, { marginTop: 20 }]}>
         <Text style={styles.signUpText}>No account? </Text>
         <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
       </View>
     </Background>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
