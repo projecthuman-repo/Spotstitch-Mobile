@@ -13,6 +13,7 @@ import {
 } from './src/screens'
 import TrendingScreen from './src/screens/TrendingScreen'
 import PostScreen from './src/screens/PostScreen'
+import EventScreen from './src/screens/EventScreen'
 import LoginOTPVerificationScreen from './src/screens/LoginOTPVerification'
 import AccountCreationScreen from './src/screens/AccountCreation'
 
@@ -35,18 +36,10 @@ export default function App() {
           <Stack.Screen name="Dashboard" component={Dashboard} />
           <Stack.Screen name="TrendingScreen" component={TrendingScreen} />
           <Stack.Screen name="PostScreen" component={PostScreen} />
-          <Stack.Screen
-            name="ResetPasswordScreen"
-            component={ResetPasswordScreen}
-          />
-          <Stack.Screen
-            name="LoginOTPVerificationScreen"
-            component={LoginOTPVerificationScreen}
-          />
-          <Stack.Screen
-            name="AccountCreationScreen"
-            component={AccountCreationScreen}
-          />
+          <Stack.Screen name="EventScreen" component={EventScreen} />
+          <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
+          <Stack.Screen name="LoginOTPVerificationScreen" component={LoginOTPVerificationScreen} />
+          <Stack.Screen name="AccountCreationScreen" component={AccountCreationScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>
