@@ -31,19 +31,54 @@ export default function App() {
             headerShown: false,
           }}
         >
-          <Stack.Screen name="LoadingScreen" component={LoadingScreen} />
-          <Stack.Screen name="StartScreen" component={StartScreen} />
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
-          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-          <Stack.Screen name="Dashboard" component={Dashboard} />
-          <Stack.Screen name="TrendingScreen" component={TrendingScreen} />
-          <Stack.Screen name="PostScreen" component={PostScreen} />
-          <Stack.Screen name="EventScreen" component={EventScreen} />
-          <Stack.Screen name="ResetPasswordScreen" component={ResetPasswordScreen} />
-          <Stack.Screen name="LoginOTPVerificationScreen" component={LoginOTPVerificationScreen} />
-          <Stack.Screen name="AccountCreationScreen" component={AccountCreationScreen} />
+          <Stack.Screen 
+            name="LoadingScreen" 
+            component={LoadingScreen} 
+          />
+          <Stack.Screen 
+            name="StartScreen" 
+            component={StartScreen} 
+          />
+          <Stack.Screen 
+            name="LoginScreen" 
+            component={LoginScreen} 
+          />
+          <Stack.Screen 
+            name="RegisterScreen" 
+            component={RegisterScreen} 
+          />
+          <Stack.Screen 
+            name="Dashboard" 
+            component={Dashboard} 
+          />
+          <Stack.Screen 
+            name="TrendingScreen" 
+            component={TrendingScreen} 
+          />
+          <Stack.Screen 
+            name="PostScreen" 
+            component={PostScreen} 
+          />
+          <Stack.Screen 
+            name="EventScreen" 
+            component={EventScreen} 
+          />
+          <Stack.Screen 
+            name="ResetPasswordScreen" 
+            component={ResetPasswordScreen} 
+          />
+          <Stack.Screen 
+            name="LoginOTPVerificationScreen" 
+            component={LoginOTPVerificationScreen} 
+          />
+          <Stack.Screen 
+            name="AccountCreationScreen" 
+            component={AccountCreationScreen} 
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
   );
 };
+
+// check the theme for customization options. may have to add StyleSheets to certain screens as well.
