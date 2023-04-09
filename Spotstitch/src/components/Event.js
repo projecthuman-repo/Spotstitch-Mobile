@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
 
 const Event = ({ name, time, area, imageUrl, description }) => {
   const navigation = useNavigation();

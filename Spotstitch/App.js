@@ -1,8 +1,10 @@
-import React from 'react'
-import { Provider } from 'react-native-paper'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import { theme } from './src/core/theme'
+import * as React from 'react';
+// import { StyleSheet,  } from 'react-native';
+import { Provider as PaperProvider} from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native/lib/typescript/lib/src';
+// import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { theme } from './src/core/theme';
 import {
   LoadingScreen,
   StartScreen,
@@ -10,18 +12,18 @@ import {
   RegisterScreen,
   ResetPasswordScreen,
   Dashboard,
-} from './src/screens'
-import TrendingScreen from './src/screens/TrendingScreen'
-import PostScreen from './src/screens/PostScreen'
-import EventScreen from './src/screens/EventScreen'
-import LoginOTPVerificationScreen from './src/screens/LoginOTPVerification'
-import AccountCreationScreen from './src/screens/AccountCreation'
+} from './src/screens';
+import TrendingScreen from './src/screens/TrendingScreen';
+import PostScreen from './src/screens/PostScreen';
+import EventScreen from './src/screens/EventScreen';
+import LoginOTPVerificationScreen from './src/screens/LoginOTPVerification';
+import AccountCreationScreen from './src/screens/AccountCreation';
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <Provider theme={theme}>
+    <PaperProvider theme={theme}>
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="LoadingScreen"
@@ -42,6 +44,6 @@ export default function App() {
           <Stack.Screen name="AccountCreationScreen" component={AccountCreationScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    </Provider>
-  )
-}
+    </PaperProvider>
+  );
+};
