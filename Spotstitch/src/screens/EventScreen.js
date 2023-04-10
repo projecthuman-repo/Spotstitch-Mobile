@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, ImageBackground, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
+// import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
+import { useNavigation } from '@react-navigation/native';
 
 const BackButton = () => {
     const navigation = useNavigation();

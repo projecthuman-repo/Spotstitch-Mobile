@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text, Image, TouchableOpacity, TextInput } from 'react-native';
 import { AntDesign, Feather, Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
+// import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
+import { useNavigation } from '@react-navigation/native';
 
 
 

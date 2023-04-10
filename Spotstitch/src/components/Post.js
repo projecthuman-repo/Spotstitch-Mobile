@@ -1,7 +1,8 @@
-import React from 'react';
+import * as React from 'react';
 import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
 import { AntDesign, Feather, Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
+// import { useNavigation } from '@react-navigation/native/lib/typescript/lib/src';
+import { useNavigation } from '@react-navigation/native';
 
 const DEFAULT_PROFILE_PIC ='../../assets/profile.jpg';
 
