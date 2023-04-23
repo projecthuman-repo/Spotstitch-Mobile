@@ -30,7 +30,8 @@
     "react-native-tab-view": "^3.5.1",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.13.12",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "react-swm-icon-pack": "^1.0.14"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

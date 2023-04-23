@@ -1,10 +1,14 @@
 import * as React from 'react';
-// import { StyleSheet,  } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Provider as PaperProvider} from 'react-native-paper';
 // import { NavigationContainer } from '@react-navigation/native/lib/typescript/lib/src';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { theme } from './src/core/theme';
+
+// SWM Icon Pack
+// import { SWMIcon } from 'react-swm-icon-pack';
+
 import {
   LoadingScreen,
   StartScreen,
