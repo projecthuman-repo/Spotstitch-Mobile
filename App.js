@@ -1,20 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import JoinLayerScreen from './src/JoinLayerScreen';
+import SelectTopic from './src/SelectTopic';
+// import AddBannerPhoto from './src/AddBannerPhoto';
+// import AddProfilePhoto from './src/AddProfilePhoto';
+
+import AddBannerPhoto from './src/FromRepo/AddBannerRepo';
+import AddProfilePhoto from './src/FromRepo/AddProfileRepo';
+
+import SocialMediaButton from './src/FromRepo/SocialMediaButton';
+import JoinLayers from './src/FromRepo/JoinLayers';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <JoinLayerScreen/>
+    // <SelectTopic/>
+    // <AddBannerPhoto/>
+    // <AddProfilePhoto/>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    // <AddBannerPhoto/>
+    // <AddProfilePhoto/>
+    // <SocialMediaButton/>
+    // <JoinLayers/>
+    );
+};
