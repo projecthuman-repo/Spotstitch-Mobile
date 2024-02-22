@@ -23,4 +23,12 @@ export const dummyData = [
     id: 6,
     title: 'Games',
   },
+  {
+    id: 7,
+    title: 'Arts',
+  },
+  {
+    id: 8,
+    title: 'Coding',
+  },
 ]

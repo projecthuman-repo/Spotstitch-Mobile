@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image , StyleSheet, Platform, StatusBar , View, Button} from 'react-native';
+import SelectTopics from './FromRepo/SelectTopics';
 
 function SelectTopic(props) {
     return (
@@ -16,9 +17,8 @@ function SelectTopic(props) {
             <Image source={require( '../assets/select.png')}
                 />
             </View>
-            <View style={ styles.layerlist}> 
-                <Button title='WTF'/>
-            </View>
+            <SelectTopics/>
+
         </View>
     );
 }
@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
         height:'20%',      
     },
     midtext:{             
-        height:'6%',     
+        height:'10%',     
     },
     detailtext:{   
         justifyContent: 'center',       
-        height:'6%',     
+        height:'10%',     
     },
     layerlist:{
         margin:20
