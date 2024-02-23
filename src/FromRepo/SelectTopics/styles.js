@@ -23,7 +23,6 @@ export default StyleSheet.create({
     paddingRight: 20,
   },
   itemContainer: {
-    // backgroundColor: '#D4D4D4',
     borderColor:'#A5DC7Aff',  
     borderWidth:2.4,
     paddingHorizontal: 16,

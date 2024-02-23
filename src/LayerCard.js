@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, FlatList} from 'react-native';
-import LayerButton from './FromRepo/LayerButton';
+// import LayerButton from './FromRepo/LayerButton';
+import LayerButton from './LayerButton';
 
 function LayerCard({dummyData}) {
     return (
@@ -9,8 +10,8 @@ function LayerCard({dummyData}) {
                 data={ dummyData}
                 renderItem={({ item }) => <LayerButton title={item.title} />}
                 keyExtractor={(item) => item.id.toString()}
-                // showsVerticalScrollIndicator={false}
-                // showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
+                showsHorizontalScrollIndicator={false}
             />
         </View>
     );

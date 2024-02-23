@@ -1,6 +1,7 @@
 import React from 'react';
-import { Image , StyleSheet, Platform, StatusBar , View, Button} from 'react-native';
-import SelectTopics from './FromRepo/SelectTopics';
+import { Image , StyleSheet, Platform, StatusBar , View, Button, TouchableOpacity} from 'react-native';
+// import SelectTopics from './FromRepo/SelectTopics';
+import SelectCard from './SelectCard';
 
 function SelectTopic(props) {
     return (
@@ -17,8 +18,22 @@ function SelectTopic(props) {
             <Image source={require( '../assets/select.png')}
                 />
             </View>
-            <SelectTopics/>
+            <SelectCard/>
+            <View style={ styles.lastRow }
+            >
+                <TouchableOpacity onPress={() => console.log("goback") } >
+                    <Image source={require( '../assets/back2.png')} onPress={() => navigation.goBack()} />    
+                </TouchableOpacity>    
+                <View style={{ flexDirection:'row', alignItems:'center' , columnGap:20}}>
+                    <TouchableOpacity onPress={() => console.log("Skip")} >
+                        <Image source={require( '../assets/skipBtn.png')} />    
+                    </TouchableOpacity >            
+                    <TouchableOpacity onPress={() => console.log("Done")} >
+                        <Image source={require( '../assets/nextBtn.png')} />    
+                    </TouchableOpacity >            
 
+                </View>
+            </View>  
         </View>
     );
 }
@@ -37,11 +52,13 @@ const styles = StyleSheet.create({
     },
     detailtext:{   
         justifyContent: 'center',       
-        height:'10%',     
+        height:'5%',     
     },
-    layerlist:{
-        margin:20
-
+    lastRow:{
+        flexDirection:'row',
+        alignItems:'center',   
+        columnGap: 160,
+        bottom:'5%'
     }
 })
 

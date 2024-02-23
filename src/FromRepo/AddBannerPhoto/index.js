@@ -12,7 +12,7 @@ export default function AddBannerPhoto() {
           console.log('Camera')
         }}
       >
-        <MaterialCommunityIcons name="camera" size={27} color="#000" />
+        <MaterialCommunityIcons name="camera-outline" size={27} color="#000" />
       </TouchableOpacity>
       <View style={styles.imageContainer}>
         <TouchableOpacity
