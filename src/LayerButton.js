@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native'
 
 export default function LayerButton({ title, onPress }) {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity style={styles.container} onPress={ ()=> console.log(title)}>
       <Text style={styles.text}>{title}</Text>
       <Text style={styles.joinText}>Join</Text>
     </TouchableOpacity>

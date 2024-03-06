@@ -16,8 +16,8 @@ export default function App() {
   
   return (
    
-    // <JoinLayerScreen/>
-    <SelectTopic/>
+    <JoinLayerScreen/>
+    // <SelectTopic/>
     // <AddBannerPhoto/>
     // <AddProfilePhoto/>
 

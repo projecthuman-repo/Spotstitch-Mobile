@@ -16,20 +16,16 @@ function AddBannerPhoto(props) {
         <View style={ styles.layer} >            
             <TouchableOpacity
                 style={styles.camera}
-                onPress={() => {
-                console.log('Camera')
-                }}
+                onPress={() => { console.log('Camera') }}
             >
                 <Image source={require( '../assets/cameraIcon.png')}/> 
                 {/* <MaterialCommunityIcons name="camera-outline" size={27} color="#000" /> */}
             </TouchableOpacity>
         </View>
-        <View  style={{ position:'absolute', top:'55%' , zIndex:0}}>
+        <View  style={ styles.imagecontainer }>
             <TouchableOpacity
             style={styles.image}
-            onPress={() => {
-                console.log('Edit')
-            }}
+            onPress={() => { console.log('Edit') }}
             >
             <Image source={require( '../assets/editIcon.png')}/> 
             {/* <MaterialCommunityIcons name="pencil" size={27} color="#000" /> */}
@@ -39,11 +35,7 @@ function AddBannerPhoto(props) {
             //   style={{ position:'absolute', top:'45%'}}
             //   style={styles.userAvatar}
             />
-            <Text style={{
-                textAlign: 'center',
-                fontSize: 18,
-                fontWeight: 'bold',
-            }}>John Doe</Text>
+            <Text style={ styles.username}>John Doe</Text>
         </View>
         <View style={ styles.lastRow } >
                 <TouchableOpacity onPress={() => console.log("goback") } >
@@ -69,7 +61,7 @@ const styles = StyleSheet.create({
         paddingTop: Platform.OS === 'android'? StatusBar.currentHeight*3:'20%',
     },
     layer:{
-        height:'20%',
+        height:'25%',
         width:'100%',
         backgroundColor:"#D4EAC3"
     },
@@ -100,6 +92,17 @@ const styles = StyleSheet.create({
         // padding: 2,
         // borderRadius: 7,
         zIndex: 1,
+      }, 
+      imagecontainer:{
+        position:'absolute',
+        top: Platform.OS === 'android'? '60%':'50%', 
+        zIndex:0
+      },
+      username: {
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: 'bold',
+        paddingTop:'15%'
       },
       lastRow:{
         position:'absolute',

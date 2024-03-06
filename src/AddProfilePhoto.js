@@ -13,14 +13,14 @@ function AddProfilePhoto(props) {
             <View style={ styles.midtext}>
                 <Image source={require( '../assets/show.png')} />
             </View>  
-            <View style={{ opacity:1}}>
+            <View style={{zIndex:1}}>
                 <TouchableOpacity
                 style={styles.image}
                 onPress={() => refRBSheet.current.open()}
                 >
                     <Image source={require( '../assets/cameraIcon.png')}/> 
                 </TouchableOpacity>
-                <Image source={require( '../assets/empty-avatar.png')} />            
+                <Image  source={require( '../assets/empty-avatar.png')} />            
             </View>    
                            
             <RBSheet
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         right: '2%',
         // padding: 2,
         // borderRadius: 7,
-        zIndex: 1,
+        zIndex: 3,
     },
     lastRow:{
         position:'absolute',
