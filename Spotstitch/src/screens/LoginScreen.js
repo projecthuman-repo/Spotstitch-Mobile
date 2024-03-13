@@ -42,6 +42,7 @@ export default function LoginScreen({ navigation }) {
       <BackButton goBack={navigation.goBack} />
       <Logo />
       <Header>Welcome to Spotstitch!</Header>
+      
       <TextInput
         label="Email"
         returnKeyType="next"
@@ -54,42 +55,41 @@ export default function LoginScreen({ navigation }) {
         textContentType="emailAddress"
         keyboardType="email-address"
       />
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-        <TextInput
-          label="Password"
-          returnKeyType="done"
-          value={password.value}
-          onChangeText={(text) => setPassword({ value: text, error: '' })}
-          error={!!password.error}
-          errorText={password.error}
-          secureTextEntry={!showPassword}
-          style={{ flex: 1 }}
-        />
-        <TouchableOpacity onPress={togglePasswordVisibility}>
-          <Text style={{ fontSize: 16, color: 'blue', marginLeft: 10 }}>
-            {showPassword ? 'Hide' : 'Show'}
-          </Text>
-        </TouchableOpacity>
-      </View>
+
+      <TextInput
+        label="Password"
+        returnKeyType="done"
+        value={password.value}
+        onChangeText={(text) => setPassword({ value: text, error: '' })}
+        error={!!password.error}
+        errorText={password.error}
+        secureTextEntry={!showPassword}
+      />
+      <TouchableOpacity onPress={togglePasswordVisibility}>
+        <Text style={{ fontSize: 16, color: 'blue', marginLeft: 10 }}>
+        </Text>
+      </TouchableOpacity>
+
       <Button style={styles.signInButton} mode="contained" onPress={onLoginPressed}>
-        <Text style={styles.signInText}>Sign in</Text>
+        <Text style={styles.signInText}>SIGN IN</Text>
       </Button>
       <HorizontalLine text="Or sign in with social media" />
       <View style={[styles.row, styles.icons]}>
         {socialIconList.map((item) => {
           return (
-            <Icon
+             <Icon
               key={item.name}
               name={item.name}
               containerStyle={styles.iconContainer}
               onPress={item.onPress}
+              type='font-awesome'
             />
           );
         })}
       </View>
       <View style={[styles.row, { marginTop: 20 }]}>
         <Text style={styles.signUpText}>No account? </Text>
-        <TouchableOpacity onPress={() => navigation.replace('RegisterScreen')}>
+        <TouchableOpacity onPress={() => {console.log("Sign up")}}>
           <Text style={styles.link}>Sign up</Text>
         </TouchableOpacity>
       </View>
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    iconColor: 'green',
   },
   link: {
     fontWeight: 'bold',
@@ -118,10 +119,10 @@ const styles = StyleSheet.create({
   signInButton: {
     marginTop: 20,
     width: '40%',
-    backgroundColor: theme.colors.gray,
+    backgroundColor: theme.colors.lightBlue,
   },
   signInText: {
-    color: theme.colors.text,
+    color: "#FFFFFF",
     fontWeight: 'bold',
   },
   signUpText: {

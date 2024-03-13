@@ -14,13 +14,14 @@ export default function LoginOTPVerificationScreen({ navigation, route }) {
     <SafeAreaView style={styles.container}>
       <Header>Verify it's you.</Header>
       <View style={styles.phoneContainer}>
-        <Text>An authentication code has been sent to</Text>
+        <Text style={styles.messageText}>An authentication code has been sent to</Text>
         <View style={styles.row}>
           <Text style={styles.phoneText}>
             {'***-***-' + userPhoneNumber.slice(-4)}
           </Text>
-          <Text> and will expire after 5 minutes.</Text>
+          <Text style={styles.messageText}> and will expire after 5</Text>
         </View>
+        <Text style={styles.messageText}> minutes.</Text>
       </View>
       <TextInput
         label="6-digit code"
@@ -34,20 +35,14 @@ export default function LoginOTPVerificationScreen({ navigation, route }) {
       <Button
         style={styles.button}
         mode="contained"
-        onPress={() => navigation.navigate('Dashboard')}
+        onPress={() => {console.log("Continue")}}
       >
-        <Text style={styles.buttonText}>Continue</Text>
-      </Button>
-      <Button
-        style={styles.skipButton}
-        mode="text"
-        onPress={() => navigation.navigate('Dashboard')}
-      >
-        <Text style={styles.skipButtonText}>Skip</Text>
+
+      <Text style={styles.buttonText}>CONTINUE</Text>
       </Button>
       <View style={styles.row}>
         <Text style={styles.codeText}>Need another code? </Text>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => {console.log("Send again")}}>
           <Text style={styles.link}>Send again</Text>
         </TouchableOpacity>
       </View>
