@@ -10,7 +10,8 @@ const Icon = ({ name, size, color, onPress, containerStyle }) => {
         style={[
           styles.container,
           {
-            backgroundColor: color || '#666',
+            backgroundColor: color || '#90C766',
+            borderRadius: 25,
           },
           containerStyle,
         ]}
